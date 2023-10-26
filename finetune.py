@@ -53,7 +53,7 @@ tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-13b-chat-hf",
                                                 
 tokenizer.pad_token = tokenizer.eos_token
 
-dataset = load_dataset("csv", data_files = 'perf.csv', split = "train")
+dataset = load_dataset("Leul78/qanda")
 def map_function(example):
     question = f"#### Human: {example['question'].strip()}"
     output = f"#### Assistant: {example['answer'].strip()}"
