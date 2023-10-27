@@ -12,7 +12,7 @@ max_length = 128
 load_in_4bit = True
 lora_alpha = 16             # How much to weigh LoRA params over pretrained params
 lora_dropout = 0.1          # Dropout for LoRA weights to avoid overfitting
-lora_r = 16                 # Bottleneck size between A and B matrix for LoRA params
+lora_r = 32                 # Bottleneck size between A and B matrix for LoRA params
 lora_bias = "all" 
 lora_target_modules = [
     "q_proj",
@@ -57,8 +57,8 @@ tokenizer.pad_token = tokenizer.eos_token
 
 dataset = load_dataset("Leul78/qanda")
 def map_function(example):
-    question = f"#### Human: {example['question'].strip()}"
-    output = f"#### Assistant: {example['answer'].strip()}"
+    question = f"#### Human: {example['Question'].strip()}"
+    output = f"#### Assistant: {example['Answer'].strip()}"
     question_encoded = tokenizer(question)
     output_encoded = tokenizer(output, max_length=max_length-1-len(question_encoded["input_ids"]), truncation=True, padding="max_length")
     output_encoded["input_ids"] = output_encoded["input_ids"] + [tokenizer.pad_token_id]
