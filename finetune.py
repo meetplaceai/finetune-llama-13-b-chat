@@ -26,10 +26,10 @@ lora_target_modules = [
 # Trainer params
 output_dir = "outputs_squad"                              # Directory to save the model
 optim_type = "adafactor"                            # Optimizer type to train with 
-learning_rate = 0.00005                              # Model learning rate
+learning_rate = 2e-4                              # Model learning rate
 weight_decay = 0.002                                # Model weight decay
-per_device_train_batch_size = 8                     # Train batch size on each GPU
-per_device_eval_batch_size = 8                      # Eval batch size on each GPU
+per_device_train_batch_size = 6                     # Train batch size on each GPU
+per_device_eval_batch_size = 6                      # Eval batch size on each GPU
 gradient_accumulation_steps = 2                     # Number of steps before updating model
 warmup_steps = 5                                    # Number of warmup steps for learning rate
 save_steps = 100                                     # Number of steps before saving model
