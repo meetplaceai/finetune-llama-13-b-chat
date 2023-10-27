@@ -99,6 +99,7 @@ training_args = TrainingArguments(
     output_dir=output_dir,
     evaluation_strategy="epoch",
     optim=optim_type,
+    num_train_epochs=8,
     learning_rate=learning_rate,
     weight_decay=weight_decay,
     per_device_train_batch_size=per_device_train_batch_size,
