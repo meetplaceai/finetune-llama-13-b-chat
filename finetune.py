@@ -45,17 +45,17 @@ if load_in_4bit == True:
                                                 trust_remote_code=True, 
                                                 device_map="auto", 
                                                 quantization_config=bnb_config,
-                                                 token="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",
+                                                 token="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",
                                                 cache_dir="./models",)
 # Load in the tokenizer
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-13b-chat-hf",
                                             trust_remote_code=True,
-                                          token="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",
+                                          token="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",
                                             cache_dir="./models",)
                                                 
 tokenizer.pad_token = tokenizer.eos_token
 
-dataset = load_dataset("Leul78/qanda",token="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")
+dataset = load_dataset("Leul78/qanda",token="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")
 def map_function(example):
     question = f"#### Human: {example['Question'].strip()}"
     output = f"#### Assistant: {example['Answer'].strip()}"
