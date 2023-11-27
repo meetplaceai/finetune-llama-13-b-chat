@@ -20,10 +20,10 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype=torch.float16,
     trust_remote_code=True,
     device_map="cpu",
-    token="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",
+    token="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",
     cache_dir="./models"
 )
-tokenizer = AutoTokenizer.from_pretrained(peft_config.base_model_name_or_path, token="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", cache_dir="./models")
+tokenizer = AutoTokenizer.from_pretrained(peft_config.base_model_name_or_path, token="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", cache_dir="./models")
 
 # Copy local model to output path
 import os
