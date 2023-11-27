@@ -9,7 +9,7 @@ import torch
 device = "auto"
 local_model_path = "outputs_squad/merged_model"     # Path to the combined weights
 repo_name = "Leul78/llama-13b-chat-priv"            # HuggingFace repo name
-hf_token = "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"         # Huggingface token
+hf_token = "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"         # Huggingface token
 
 
 
